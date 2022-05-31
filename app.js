@@ -9,3 +9,34 @@ Descrizione:
     quanti e quali dei numeri da indovinare sono stati individuati.
 
 */
+
+
+// variabili globali
+const randomNumbersContainer = document.getElementById("randomNumber");
+
+// creo array vuoto dei numeri random da visualizzare 
+let randomNumbers = [];
+
+
+/* while (randomNumbers.length < 5) {
+    let createRandomNumber = Math.floor(Math.random() * 5) + 1;
+
+    //controllare che il numero sia unico
+    if (!randomNumbers.includes(createRandomNumber)) {
+        randomNumbers.push(createRandomNumber);
+    }
+} */
+
+do {
+    let createRandomNumber = Math.floor(Math.random() * 100) + 1;
+
+    //controllare che il numero sia unico
+    if (!randomNumbers.includes(createRandomNumber)) {
+        randomNumbers.push(createRandomNumber);
+    }
+} while (randomNumbers.length < 5)
+
+console.log(randomNumbers);
+
+randomNumbersContainer.innerHTML = `Memorizza questi numeri: <br> 
+                                    <span >${randomNumbers}</span>`;
